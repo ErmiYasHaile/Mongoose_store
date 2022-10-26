@@ -52,7 +52,10 @@ app.post('/items',(req, res)=>{
 //SHOW
 app.get('/items/:id',(req,res)=>{
     Product.findById(req.params.id,(error,foundedProuduct)=>{
-        res.send(foundedProuduct)
+        // res.send(foundedProuduct)
+        res.render('show.ejs',{
+            product: foundedProuduct
+        })
     })
     // res.send('show route is live now on SKYTV')
 })
