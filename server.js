@@ -28,7 +28,10 @@ app.use(express.urlencoded({extended: true}))
 
 //INDEX
 app.get('/items',(req, res)=>{
-    res.send('index is going to work now!')
+    Product.find({},(error, allProducts)=>{
+    res.render('index.ejs',{products: allProducts})
+    })
+    // res.render('index.ejs')
 })
 
 // NEW
