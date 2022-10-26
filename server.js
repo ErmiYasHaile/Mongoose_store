@@ -42,11 +42,20 @@ app.get('/items/new',(req,res)=>{
 //CREATE
 app.post('/items',(req, res)=>{
     Product.create(req.body,(error, createdProduct)=>{
-        res.send(createdProduct);
+        res.redirect('/items');
+        // res.send(createdProduct);
     })
     // res.send(req.body)
 })
 
+
+//SHOW
+app.get('/items/:id',(req,res)=>{
+    Product.findById(req.params.id,(error,foundedProuduct)=>{
+        res.send(foundedProuduct)
+    })
+    // res.send('show route is live now on SKYTV')
+})
 
 
 app.listen(PORT, ()=>

@@ -7,14 +7,21 @@
     <title>Index route</title>
 </head>
 <body>
+    <nav>
+        <a href="/items/new"> Add new items</a>
+    </nav>
     <h1>STORE ITEMS LIST</h1>
     <%   products.forEach(product =>{ %>
         <ul>
-        <li><%=product.name %></li>
+            
+        <li>
+        <a href="/items/<%= products._id %>"><%=product.name %></a>
+        </li>
         <%=product.description %></br>
         <%=product.img %> </br>
         PRICE: <%=product.price %> </br>
         <%=product.qty %> remaining
     </ul>
    <%    })%>
+
 </html>
