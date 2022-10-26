@@ -1,8 +1,9 @@
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
+const Product = require('./models/product')
 
-// const store = require('./models/store')
+
 
 require('dotenv').config()
 
@@ -19,11 +20,28 @@ db.on('error',(err) => console.log(err.message))
 db.on('connected',()=> console.log('mongo connected'))
 db.on('disconnected',()=>console.log('mongo disconnected'))
 
+//MIDDLEWARE
+app.use(express.urlencoded({extended: true}))
+
 // I N D U C E S - Index New Delete Update Create Edit Show
 
+
+//INDEX
+app.get('/items',(req, res)=>{
+    res.send('index is going to work now!')
+})
+
+// NEW
+app.get('/items/new',(req,res)=>{
+    res.render('new.ejs')
+})
+
 //CREATE
-app.post('/',(req, res)=>{
-    res.send('received')
+app.post('/items',(req, res)=>{
+    Product.create(req.body,(error, createdProduct)=>{
+        res.send(createdProduct);
+    })
+    // res.send(req.body)
 })
 
 
