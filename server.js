@@ -57,6 +57,15 @@ app.post('/items',(req, res)=>{
     })
     // res.send(req.body)
 })
+// EDIT
+app.get('/items/:id/edit',(req, res)=>{
+    Product.findById(req.params.id,(err, foundedProuduct)=>{
+        res.render('edit.ejs',{
+            product: foundedProuduct
+        })
+        // res.send(foundedProuduct)
+    })
+})
 
 
 //SHOW

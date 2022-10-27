@@ -14,7 +14,9 @@
     <%=product.description %></br>
     <img src=<%=product.img %>> <br>
     PRICE: <%=product.price %> </br>
-    <%=product.qty %> remaining
+    <%=product.qty %> remaining </br>
+    <a href="/items/<%= product._id%>/edit">Edit this item</a>
+
     <form action="/items/<%= product._id%>?_method=DELETE" method="post">
         <input type="submit" value="DELETE">
     </form>
@@ -25,6 +27,6 @@
 Your show page should display a product with:
 a link back to the index page- CHECKED
 a link to edit the product (goes to the edit page)
-a delete button that deletes the product
+a delete button that deletes the product -CHECKED
 the number of items remaining in stock -->
 <!--  -->
