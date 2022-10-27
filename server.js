@@ -21,14 +21,13 @@ db.on('error',(err) => console.log(err.message))
 db.on('connected',()=> console.log('mongo connected'))
 db.on('disconnected',()=>console.log('mongo disconnected'))
 
-//MIDDLEWARE
+// MIDDLEWARE
 app.use(express.urlencoded({extended: true}))
 app.use(methodOverride('_method'))
 // I N D U C E S - Index New Delete Update Create Edit Show
-// Routes / Controllers
+// Routes
 
-
-//INDEX
+// INDEX
 app.get('/items',(req, res)=>{
     Product.find({},(error, allProducts)=>{
     res.render('index.ejs',{products: allProducts})
@@ -49,7 +48,21 @@ app.delete('/items/:id',(req, res)=>{
     })
     // res.send('DELETE IS GOING TO WORK')
 })
-//CREATE
+
+// UPDATE
+app.put('/items/:id',(req, res)=>{
+    // res.send(req.body
+    console.log(req.body)
+    Product.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedProduct) => {
+        console.log(err)
+        console.log(updatedProduct)
+        
+      res.redirect(`/items/${req.params.id}`)  
+
+    })
+})
+
+// CREATE
 app.post('/items',(req, res)=>{
     Product.create(req.body,(error, createdProduct)=>{
         res.redirect('/items');
@@ -68,7 +81,7 @@ app.get('/items/:id/edit',(req, res)=>{
 })
 
 
-//SHOW
+// SHOW
 app.get('/items/:id',(req,res)=>{
     Product.findById(req.params.id,(error,foundedProuduct)=>{
         // res.send(foundedProuduct)
