@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
+const methodOverride = require('method-override')
 const Product = require('./models/product')
 
 
@@ -22,8 +23,9 @@ db.on('disconnected',()=>console.log('mongo disconnected'))
 
 //MIDDLEWARE
 app.use(express.urlencoded({extended: true}))
-
+app.use(methodOverride('_method'))
 // I N D U C E S - Index New Delete Update Create Edit Show
+// Routes / Controllers
 
 
 //INDEX
@@ -38,7 +40,15 @@ app.get('/items',(req, res)=>{
 app.get('/items/new',(req,res)=>{
     res.render('new.ejs')
 })
-
+// DELETE
+app.delete('/items/:id',(req, res)=>{
+    Product.findByIdAndRemove(req.params.id,(err,detetedProduct)=>{
+        console.log(detetedProduct)
+        res.redirect('/items')
+        // HOW TO REDIRECT TO THE SHOW.EJS instead of redirecting to the index route
+    })
+    // res.send('DELETE IS GOING TO WORK')
+})
 //CREATE
 app.post('/items',(req, res)=>{
     Product.create(req.body,(error, createdProduct)=>{
