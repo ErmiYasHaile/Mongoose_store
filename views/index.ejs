@@ -13,14 +13,11 @@
     <h1>STORE ITEMS LIST</h1>
     <%   products.forEach(product =>{ %>
         <ul>
-            
         <li>
         <a href="/items/<%= product._id %>"><%=product.name %></a>
         </li>
-        <%=product.description %></br>
-        <%=product.img %> </br>
-        PRICE: <%=product.price %> </br>
-        <%=product.qty %> remaining
+        <img src=<%=product.img %>> <br>
+        PRICE: <%=product.price %>
     </ul>
    <%    })%>
 
