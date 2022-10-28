@@ -1,5 +1,8 @@
 const express = require('express')
 const productRouter = express.Router()
+const productData = require("../models/seed")
+
+// I N D U C E S - Index New Delete Update Create Edit Show
 
 // INDEX
 productRouter.get('/items',(req, res)=>{
@@ -65,5 +68,13 @@ productRouter.get('/items/:id',(req,res)=>{
     })
     // res.send('show route is live now on SKYTV')
 })
+// SEED
+productRouter.get("/items/seed", (req, res) => {
+    Product.deleteMany({}, (error, allProducts) => {})
+    Product.create(productData,(error, data) => {
+    res.redirect("/items")
+  }
+)
+})
 
-module.exports = productRouter
+module.exports = productRouter;
