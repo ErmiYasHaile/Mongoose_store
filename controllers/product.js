@@ -1,11 +1,12 @@
 const express = require('express')
 const productRouter = express.Router()
 const productData = require("../models/seed")
+const Product = require('../models/product')
 
 // I N D U C E S - Index New Delete Update Create Edit Show
 
 // INDEX
-productRouter.get('/items',(req, res)=>{
+productRouter.get('/',(req, res)=>{
     Product.find({},(error, allProducts)=>{
     res.render('index.ejs',{products: allProducts})
     })
@@ -13,11 +14,11 @@ productRouter.get('/items',(req, res)=>{
 })
 
 // NEW
-productRouter.get('/items/new',(req,res)=>{
+productRouter.get('/new',(req,res)=>{
     res.render('new.ejs')
 })
 // DELETE
-productRouter.delete('/items/:id',(req, res)=>{
+productRouter.delete('/:id',(req, res)=>{
     Product.findByIdAndRemove(req.params.id,(err,detetedProduct)=>{
         console.log(detetedProduct)
         res.redirect('/items')
@@ -27,7 +28,7 @@ productRouter.delete('/items/:id',(req, res)=>{
 })
 
 // UPDATE
-productRouter.put('/items/:id',(req, res)=>{
+productRouter.put('/:id',(req, res)=>{
     // res.send(req.body
     console.log(req.body)
     Product.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedProduct) => {
@@ -40,7 +41,7 @@ productRouter.put('/items/:id',(req, res)=>{
 })
 
 // CREATE
-productRouter.post('/items',(req, res)=>{
+productRouter.post('/',(req, res)=>{
     Product.create(req.body,(error, createdProduct)=>{
         res.redirect('/items');
         // res.send(createdProduct);
@@ -48,7 +49,7 @@ productRouter.post('/items',(req, res)=>{
     // res.send(req.body)
 })
 // EDIT
-productRouter.get('/items/:id/edit',(req, res)=>{
+productRouter.get('/:id/edit',(req, res)=>{
     Product.findById(req.params.id,(err, foundedProuduct)=>{
         res.render('edit.ejs',{
             product: foundedProuduct
@@ -59,7 +60,7 @@ productRouter.get('/items/:id/edit',(req, res)=>{
 
 
 // SHOW
-productRouter.get('/items/:id',(req,res)=>{
+productRouter.get('/:id',(req,res)=>{
     Product.findById(req.params.id,(error,foundedProuduct)=>{
         // res.send(foundedProuduct)
         res.render('show.ejs',{
@@ -69,7 +70,7 @@ productRouter.get('/items/:id',(req,res)=>{
     // res.send('show route is live now on SKYTV')
 })
 // SEED
-productRouter.get("/items/seed", (req, res) => {
+productRouter.get("/seed", (req, res) => {
     Product.deleteMany({}, (error, allProducts) => {})
     Product.create(productData,(error, data) => {
     res.redirect("/items")
