@@ -10,6 +10,11 @@
     <nav>
         <a href="/items">Back To SHOP</a>
     </nav>
+    <% if (product.qty > 0) { %>
+        <button>BUY</button>
+      <% } else { %>
+        OUT OF STOCK
+      <% } %>
     <h1><%=product.name %> </h1>
     <%=product.description %></br>
     <img src=<%=product.img %>> <br>
@@ -20,6 +25,8 @@
     <form action="/items/<%= product._id%>?_method=DELETE" method="post">
         <input type="submit" value="DELETE">
     </form>
+    
+    <!-- <button>BUY</button> -->
 </body>
 </html>
 
