@@ -1,6 +1,6 @@
 const express = require('express')
 const productRouter = express.Router()
-const productData = require("../models/seed")
+const productData = require("../models/seed") // seed
 const Product = require('../models/product')
 
 // I N D U C E S - Index New Delete Update Create Edit Show
@@ -72,7 +72,7 @@ productRouter.get('/:id',(req,res)=>{
 // SEED
 productRouter.get("/seed", (req, res) => {
     Product.deleteMany({}, (error, allProducts) => {})
-    Product.create(productData,(error, data) => {
+    Product.create(productData, (error, data) => {
     res.redirect("/items")
   }
 )

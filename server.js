@@ -24,6 +24,7 @@ db.on('disconnected',()=>console.log('mongo disconnected'))
 app.use(express.urlencoded({extended: true}))
 app.use(methodOverride('_method'))
 app.use("/items", productcontroller)
+app.use(express.static('public'))
 // I N D U C E S - Index New Delete Update Create Edit Show
 
 
