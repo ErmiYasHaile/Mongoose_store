@@ -5,6 +5,15 @@ const Product = require('../models/product')
 
 // I N D U C E S - Index New Delete Update Create Edit Show
 
+// SEED
+productRouter.get("/seed", (req, res) => {
+    Product.deleteMany({}, (error, allProducts) => {})
+    Product.create(productData, (error, data) => {
+    res.redirect("/items")
+  }
+)
+})
+
 // INDEX
 productRouter.get('/',(req, res)=>{
     Product.find({},(error, allProducts)=>{
@@ -69,13 +78,6 @@ productRouter.get('/:id',(req,res)=>{
     })
     // res.send('show route is live now on SKYTV')
 })
-// SEED
-productRouter.get("/seed", (req, res) => {
-    Product.deleteMany({}, (error, allProducts) => {})
-    Product.create(productData, (error, data) => {
-    res.redirect("/items")
-  }
-)
-})
+
 
 module.exports = productRouter;
