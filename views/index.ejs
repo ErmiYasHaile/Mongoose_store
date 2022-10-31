@@ -8,18 +8,21 @@
     <title>Index route</title>
 </head>
 <body>
-    <nav>
-        <a href="/items/new"> Add new items</a>
-    </nav>
-    <h1>STORE ITEMS LIST</h1>
-    <%   products.forEach(product =>{ %>
-        <ul>
-        <li>
+    <div class="add-btn">
+        <a href="/items/new">Add new items</a>
+    </div>
+    <div class="topnav">
+        <h1>STORE ITEMS LIST</h1>
+    </div>
+    <div class="container">
+        <% products.forEach(product =>{ %>
+        <div class="card">
+        <div class="product-info">
         <a href="/items/<%= product._id %>"><%=product.name %></a>
-        </li>
-        <img src=<%=product.img %>> <br>
-        PRICE: <%=product.price %>
-    </ul>
+        <img src=<%=product.img %>> <br />
+        Price: <%=product.price %> 
+    </div>
+    </div>
    <%    })%>
-
+</div>
 </html>

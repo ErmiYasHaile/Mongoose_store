@@ -12,16 +12,20 @@
     </nav>
 
     <h1><%=product.name %> </h1>
+    <div class="containershow">
     <%=product.description %></br>
+  </div>
+  <div class="imgs">
     <img src=<%=product.img %>> <br>
-    PRICE: <%=product.price %> </br>
+  </div>
+    Price: <%=product.price %> </br>
     <%=product.qty %> remaining </br>
     <a href="/items/<%= product._id%>/edit">Edit this item</a>
-
+  
     <form action="/items/<%= product._id%>?_method=DELETE" method="post">
         <input type="submit" value="DELETE">
     </form>
-    
+  
     <% if (product.qty > 0) { %>
         <form action="/items/<%= product._id %>?_method=PUT" method="post">
           <input type="hidden" name="qty" value="<%= product.qty - 1 %>">

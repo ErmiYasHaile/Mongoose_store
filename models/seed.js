@@ -1,12 +1,11 @@
 const productData =
      [
     {
-      name: "Beans",
-      description:
-        "A small pile of beans. Buy more beans for a big pile of beans.",
-      img: "https://imgur.com/LEHS8h3.png",
-      price: 5,
-      qty: 99,
+      name: "Beats Studio 3",
+      description: "Ergonomic ear cups with on-ear controls Up to 22 hours of listening time Active Noise Cancelling (ANC)",
+      img: "https://www.beatsbydre.com/content/dam/beats/web/product/headphones/studio3-wireless/plp/bbd.plpasset.headphones.studio3-v2.jpg.large.2x.jpg",
+      price: 345.95,
+      qty: 9,
     },
     {
       name: "Bones",
