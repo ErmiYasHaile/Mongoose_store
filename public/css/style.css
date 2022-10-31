@@ -9,25 +9,12 @@ body {
     justify-content: center;
 }
 
-.add-btn{
- border-radius: 12px;
-  color: black;
-  padding: 10px 20px;
-  text-align: center;
-  display: inline-block;
-  font-size: 19px;
-  transition-duration: 0.4s;
-}
-.add-btn:hover{
-    background-color: #47B5FF;
-    color: white;
-}
-
 .topnav {
     background-color: #47B5FF;
     overflow: hidden;
     text-align: center;
 }
+
 .container {
     display: flex;
     border: 3px solid #161212;
@@ -35,7 +22,7 @@ body {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
-  }
+}
 
 .card {
     list-style: none;
@@ -45,42 +32,103 @@ body {
     color: #222;
     border: 2px solid #B8E8FC;
     margin: 5px;
-  }
-.container .card{
+}
+
+.container .card {
     width: 320px;
     overflow: hidden;
     text-align: center;
     border: 2px solid #1746A2;
     border-radius: 15px;
-    box-shadow: 0 0 7px #B4CDE6;;
+    box-shadow: 0 0 7px #B4CDE6;
+    ;
 }
-.container .card .img{
+
+.container .card .img {
     width: 230px;
     margin: 20px auto;
 }
-.container .card .img{
+
+.container .card .img {
     width: 100%;
 }
 
-img{
+img {
     height: 300px;
     width: 300px;
-  }
-  
-/* 
-  h1{
-    text-align: center;
-  } */
+}
 
-/* .containershow{
-    display: flex;
-    border: 3px solid #161212;
-    width: 100%;
+.containershow {
+    margin: 1em auto;
+    padding: 0;
+    width: 50%;
     flex-wrap: wrap;
     align-items: center;
+}
+
+.cardshow {
+    padding: 20px;
+    background-color: #fef4f4;
+    color: #000000;
+    border: 1px solid #B8E8FC;
+    margin: 40px;
+}
+
+.containershow .cardshow {
+    width: 350px;
+    margin: 50px auto;
+}
+
+.imgs {
+    height: 350px;
+    width: 350px;
+    /* align-items: center; */
+}
+
+/* .editbtn {
+    border-radius: 12px;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 19px;
+    transition-duration: 0.4s;
+}
+
+.editbtn:hover {
+    background-color: #47B5FF;
+    color: white;
 } */
 
-/* .imgs{
-    height: 100px;
-    width: 300px;
+/* .deletebtn {
+    border-radius: 12px;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 19px;
+    transition-duration: 0.4s;
+}
+
+.deletebtn:hover {
+    background-color: #47B5FF;
+    color: white;
 } */
+
+button {
+    display: inline-block;
+    background-color: #31E1F7;
+    border-radius: 15px;
+    border: 4px double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 10px;
+    padding: 2px;
+    width: 100px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}

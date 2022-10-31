@@ -9,7 +9,11 @@
 </head>
 <body>
     <div class="add-btn">
-        <a href="/items/new">Add new items</a>
+        <a href="/items/new">
+            <button>
+            Add new items
+            </button>
+            </a>
     </div>
     <div class="topnav">
         <h1>STORE ITEMS LIST</h1>
@@ -20,7 +24,7 @@
         <div class="product-info">
         <a href="/items/<%= product._id %>"><%=product.name %></a>
         <img src=<%=product.img %>> <br />
-        Price: <%=product.price %> 
+        Price: $<%=product.price %> 
     </div>
     </div>
    <%    })%>
