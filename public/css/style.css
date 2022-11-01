@@ -11,14 +11,14 @@ body {
 }
 
 .topnav {
-    background-color: #47B5FF;
+    background-color: #b3cde0;
     overflow: hidden;
     text-align: center;
 }
 
 .container {
     display: flex;
-    border: 3px solid #161212;
+    border: 3px solid #b3cde0;
     width: 100%;
     flex-wrap: wrap;
     align-items: center;
@@ -67,11 +67,11 @@ img {
 }
 
 .cardshow {
-    padding: 20px;
+    padding: 50px;
     background-color: #fef4f4;
     color: #000000;
     border: 3px solid #B8E8FC;
-    margin: 40px;
+    margin: 60px;
 }
 
 .containershow .cardshow {
@@ -114,7 +114,7 @@ button:hover{
 }
 .showcard{
     padding: 70px;
-    background-color: #5D6063;
+    background-color:  #b3cde0;
     color: #000000;
     border: 1px solid #B8E8FC;
     margin: 90px;
@@ -129,7 +129,7 @@ button:hover{
     display:block; 
 	margin-bottom: 10px;
     padding: 0;
-	color: #00092C;
+	color: #30475E;
 	font-size: 20px;
 }
 .newcard{
