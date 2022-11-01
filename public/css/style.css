@@ -1,5 +1,5 @@
 body {
-    background-color: #F9F9F9;
+    background-color: #EAEDF0;
     width: 100%;
     height: 100vh;
     margin: 0;
@@ -7,6 +7,7 @@ body {
     /* display: flex; */
     align-items: center;
     justify-content: center;
+    line-height: 1.3;
 }
 
 .topnav {
@@ -39,9 +40,8 @@ body {
     overflow: hidden;
     text-align: center;
     border: 2px solid #1746A2;
-    border-radius: 15px;
+    border-radius: 20px;
     box-shadow: 0 0 7px #B4CDE6;
-    ;
 }
 
 .container .card .img {
@@ -70,65 +70,77 @@ img {
     padding: 20px;
     background-color: #fef4f4;
     color: #000000;
-    border: 1px solid #B8E8FC;
+    border: 3px solid #B8E8FC;
     margin: 40px;
 }
 
 .containershow .cardshow {
     width: 350px;
     margin: 50px auto;
+    border-radius: 25px;
 }
 
 .imgs {
     height: 350px;
     width: 350px;
-    /* align-items: center; */
 }
-
-/* .editbtn {
-    border-radius: 12px;
-    color: black;
-    padding: 10px 20px;
-    text-align: center;
-    display: inline-block;
-    font-size: 19px;
-    transition-duration: 0.4s;
-}
-
-.editbtn:hover {
-    background-color: #47B5FF;
-    color: white;
-} */
-
-/* .deletebtn {
-    border-radius: 12px;
-    color: black;
-    padding: 10px 20px;
-    text-align: center;
-    display: inline-block;
-    font-size: 19px;
-    transition-duration: 0.4s;
-}
-
-.deletebtn:hover {
-    background-color: #47B5FF;
-    color: white;
-} */
 
 button {
-    display: inline-block;
-    background-color: #31E1F7;
-    border-radius: 15px;
-    border: 4px double #cccccc;
-    color: #eeeeee;
-    text-align: center;
-    font-size: 10px;
-    padding: 2px;
-    width: 100px;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin: 5px;
+    background-color:#3B9AE1;
+	color: #0F1123;
+	text-decoration: none;
+	border: 2px solid transparent;
+	font-weight: bold;
+	padding: 9px 25px;
+	border-radius: 30px;
+	transition: transform .4s; 
+}
+button:hover{
+	background-color: transparent;
+	border: 2px solid #182747;
+	cursor: pointer;
+}
+.stockbtn{
+    background-color: #F05454;
+}
+
+.containeredit{
+    display:block; 
+	margin-bottom: 10px;
+    padding: 0;
+	color: #00092C;
+	font-size: 20px;
+	/* text-shadow: 1px 1px 1px #fff; */
+}
+.showcard{
+    padding: 70px;
+    background-color: #5D6063;
+    color: #000000;
+    border: 1px solid #B8E8FC;
+    margin: 90px;
+}
+.containeredit .showcard{
+    width: 400px;
+    margin: 15px auto;
+    border-radius: 10px;
+}
+
+.containernew{
+    display:block; 
+	margin-bottom: 10px;
+    padding: 0;
+	color: #00092C;
+	font-size: 20px;
+}
+.newcard{
+    padding: 70px;
+    background-color: #5D6063;
+    color: #000000;
+    border: 1px solid #B8E8FC;
+    margin: 90px;
+}
+.containernew .newcard {
+    width: 400px;
+    margin: 15px auto;
+    border-radius: 10px;
 }

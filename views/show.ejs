@@ -8,12 +8,13 @@
     <title>Show Page</title>
 </head>
 <body>
-    <nav>
-        <a href="/items">
-          <button>Back</button>
-        </a>
-    </nav>
+    
 <div class="containershow">
+  <nav>
+    <a href="/items">
+      <button>Back</button>
+    </a>
+</nav>
   <div class="cardshow">
     <h1><%=product.name %> </h1>
 
@@ -30,16 +31,17 @@
   <div class="deletebtn">
     <form action="/items/<%= product._id%>?_method=DELETE" method="post">
         <!-- <input type="submit" value="DELETE"> -->
-        <button>Delete</button>
+       <br> <button>Delete</button>
     </form>
   </div>
     <% if (product.qty > 0) { %>
         <form action="/items/<%= product._id %>?_method=PUT" method="post">
           <input type="hidden" name="qty" value="<%= product.qty - 1 %>">
-          <button>BUY</button>
+          <br><button>BUY</button>
         </form>
+        <br>
       <% } else { %>
-        OUT OF STOCK
+        <br><button class="stockbtn"> OUT OF STOCK </button>
       <% } %>
     </div>
   </div>

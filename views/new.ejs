@@ -1,20 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
     <title>NewPage-with Forms</title>
-</head>
-<body>
-    <h1>New Page</h1>
-    <form action="/items" method="POST">
-        name: <input type="text" name="name"><br/>
-        description: <input type="text" name="description"><br/>
-        image: <input type="url" name="img"><br/>
-        price: <input type="currency" name="price"><br/>
-        qty: <input type="number" name="qty"><br/>
-        <input type="submit" value="Add New Items">
-    </form>
-</body>
+  </head>
+  <body>
+    <div class="containernew">
+      <div class="topnav">
+        <h1>NEW- Add New Item</h1>
+      </div>
+      <div class="newcard">
+      <form action="/items" method="POST">
+        Name: <br /><input type="text" name="name" /><br />
+        Description:<br /> <input type="text" name="description" /><br />
+        Image:<br /> <input type="url" name="img" /><br />
+        Price: <br /><input type="currency" name="price" /><br />
+        Qty:<br /> <input type="number" name="qty" /><br />
+        <!-- <input type="submit" value="Add New Items"> -->
+        <br>
+        <button type="submit">Add New Item(s)</button>
+      </form>
+      <br />
+      <nav>
+        <a href="/items">
+          <button>Back</button>
+        </a>
+      </nav>
+    </div>
+    </div>
+  </body>
 </html>
