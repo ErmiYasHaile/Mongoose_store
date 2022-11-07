@@ -36,6 +36,7 @@
   </div>
     <% if (product.qty > 0) { %>
         <form action="/items/<%= product._id %>?_method=PUT" method="post">
+          <!-- wow! i am surprised this persists in the database, great solution for the buy button -->
           <input type="hidden" name="qty" value="<%= product.qty - 1 %>">
           <br><button>BUY</button>
         </form>

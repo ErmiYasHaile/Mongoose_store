@@ -17,7 +17,8 @@
         Name: <br /><input type="text" name="name" /><br />
         Description:<br /> <input type="text" name="description" /><br />
         Image:<br /> <input type="url" name="img" /><br />
-        Price: <br /><input type="currency" name="price" /><br />
+        <!-- currency is not an actual type of input, i would use number cause a user can put in a string instead of a number as is and then the data will not post according to your schema cause price is number-->
+        Price: <br /><input type="number" name="price" /><br />
         Qty:<br /> <input type="number" name="qty" /><br />
         <!-- <input type="submit" value="Add New Items"> -->
         <br>

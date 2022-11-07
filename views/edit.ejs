@@ -26,7 +26,8 @@
           image: <br />
           <input type="url" name="img" value="<%=product.img %>" /> <br />
           Price: <br />
-          <input type="currency" name="price" value="<%=product.price %>" />
+                  <!-- currency is not an actual type of input, i would use number cause a user can put in a string instead of a number as is and then the data will not update according to your schema cause price is number-->
+          <input type="number" name="price" value="<%=product.price %>" />
           <br />
           qty: <br />
           <input type="number" name="qty" value="<%=product.qty %>" />
